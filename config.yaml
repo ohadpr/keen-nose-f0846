@@ -1,0 +1,61 @@
+title: Hologram
+baseURL: /
+params:
+  header:
+    buttons:
+      - label: Log In
+        url: generic.md
+        is_button: false
+      - label: Sign Up
+        url: generic.md
+        is_button: true
+        is_primary: false
+  menu:
+    actions:
+      - label: Log In
+        url: generic.md
+        is_scrolly: false
+        is_primary: true
+      - label: Sign Up
+        url: generic.md
+        is_scrolly: false
+        is_primary: false
+  palette: blue
+  palettes:
+    blue:
+      sass:
+        accent2: '#7cafa3'
+        accent3_bg: '#6c85ab'
+        accent3_fg_light: '#bec4dd'
+        accent4: '#b67e96'
+    purple:
+      sass:
+        accent2: '#5eadbb'
+        accent3_bg: '#7c759a'
+        accent3_fg_light: '#c2bedd'
+        accent4: '#8693bc'
+  footer:
+    social_icons:
+      - title: Twitter
+        icon: fa-twitter
+        url: '#'
+      - title: Facebook
+        icon: fa-facebook
+        url: '#'
+      - title: LinkedIn
+        icon: fa-linkedin
+        url: '#'
+      - title: GitHub
+        icon: fa-github
+        url: '#'
+      - title: Phone
+        icon: fa-phone
+        url: '#'
+      - title: Email
+        icon: fa-envelope
+        url: '#'
+    copyright: >-
+      &copy; Untitled Corp. All rights reserved. Lorem ipsum dolor sit amet
+      nullam.
+disableKinds:
+  - RSS

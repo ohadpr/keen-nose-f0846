@@ -1,0 +1,96 @@
+---
+label: Split Section
+hide_body: true
+is_partial: true
+display_field: title
+fields:
+  - type: text
+    name: title
+    label: Section Title
+    default: Augue sed pretium
+    config:
+      required: true
+  - type: textarea
+    name: subtitle
+    label: Section Subtitle
+    description: The text displayed below the section title
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: text
+    name: section_id
+    label: Section ID
+    default: one
+    config:
+      required: true
+  - type: select
+    name: section_background_style
+    label: Section Background Style
+    description: The background style of the entire section
+    config:
+      required: true
+      source:
+        type: custom
+      options:
+        - style1
+        - style2
+        - style3
+        - style4
+        - style5
+  - type: select
+    name: header_background_style
+    label: Header Background Style
+    description: The background style of the section header
+    config:
+      required: true
+      source:
+        type: custom
+      options:
+        - style1
+        - style2
+        - style3
+        - style4
+        - style5
+  - type: field_group
+    name: left
+    label: Left Article
+    description: The article displayed on the left side of the section
+    fields:
+      - type: text
+        name: title
+        label: Article Title
+      - type: textarea
+        name: text
+        label: Article Text
+        config:
+          wysiwyg: true
+          schema:
+            format: markdown
+      - type: text
+        name: link
+        label: Article URL
+  - type: field_group
+    name: right
+    label: Right Article
+    description: The article displayed on the right side of the section
+    fields:
+      - type: text
+        name: title
+        label: Article Title
+      - type: textarea
+        name: text
+        label: Article Text
+        config:
+          wysiwyg: true
+          schema:
+            format: markdown
+      - type: text
+        name: link
+        label: Article URL
+  - type: text
+    name: component
+    hidden: true
+    default: split.html
+    config:
+      required: true

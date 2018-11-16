@@ -1,0 +1,45 @@
+---
+label: Spotlights Section
+hide_body: true
+is_partial: true
+display_field: title
+fields:
+  - type: text
+    name: title
+    label: Section Title
+    default: Convallis pretium
+    config:
+      required: true
+  - type: textarea
+    name: subtitle
+    label: Section Subtitle
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: text
+    name: section_id
+    label: Section ID
+    default: two
+    config:
+      required: true
+  - type: select
+    name: background_style
+    label: Background Style
+    description: The background style of the section
+    config:
+      required: true
+      source:
+        type: custom
+      options:
+        - style1
+        - style2
+        - style3
+        - style4
+        - style5
+  - type: text
+    name: component
+    hidden: true
+    default: spotlights.html
+    config:
+      required: true

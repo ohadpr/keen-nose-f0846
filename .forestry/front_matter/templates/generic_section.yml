@@ -1,0 +1,56 @@
+---
+label: Generic Section
+hide_body: true
+is_partial: true
+display_field: title
+fields:
+  - type: text
+    name: title
+    label: Section Title
+    default: Magna feugiat lorem ipsum?
+    config:
+      required: true
+  - type: textarea
+    name: text
+    label: Section Text
+    description: The text displayed below the section title
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: text
+    name: section_id
+    label: Section ID
+    default: five
+    config:
+      required: true
+  - type: select
+    name: background_style
+    label: Background Style
+    description: The background style of the section
+    config:
+      required: true
+      source:
+        type: custom
+      options:
+        - style1
+        - style2
+        - style3
+        - style4
+        - style5
+  - type: field_group_list
+    name: actions
+    label: Action Buttons
+    config:
+      labelField: label
+    fields:
+      - type: include
+        name: include_action
+        label: Action
+        template: action
+  - type: text
+    name: component
+    hidden: true
+    default: generic_section.html
+    config:
+      required: true

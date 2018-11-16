@@ -1,0 +1,14 @@
+<!-- Five -->
+<section id="{{ .section.section_id }}" class="wrapper {{ .section.background_style }} special alt">
+    <div class="inner">
+        <h4>{{ .section.title }}</h4>
+        {{ partial "markdownify-block" .section.text }}
+        {{ if .section.actions }}
+            <ul class="actions special">
+                {{ range $action := .section.actions }}
+                    <li><a href="{{ if strings.HasPrefix $action.url "#" }}{{ $action.url }}{{ else }}{{ relref $.page $action.url | relURL }}{{ end }}" class="button{{ if $action.is_primary }} primary{{ end }}{{ if $action.is_scrolly }} scrolly{{ end }}">{{ $action.label }}</a></li>
+                {{ end }}
+            </ul>
+        {{ end }}
+    </div>
+</section>

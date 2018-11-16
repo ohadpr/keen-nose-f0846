@@ -1,0 +1,29 @@
+<!-- One -->
+<section id="{{ .section.section_id }}" class="wrapper {{ .section.section_background_style }} special">
+    <div class="inner">
+        <header class="major alt {{ .section.header_background_style }}">
+            <h2>{{ .section.title }}</h2>
+            {{ partial "markdownify-block" .section.subtitle }}
+        </header>
+        <section class="split">
+            <article>
+                <h4>{{ .section.left.title }}</h4>
+                {{ partial "markdownify-block" .section.left.text }}
+                {{ if .section.left.link }}
+                    <ul class="actions special">
+                        <li><a href="{{ relref .page .section.left.link | relURL }}" class="button">Learn More</a></li>
+                    </ul>
+                {{ end }}
+            </article>
+            <article>
+                <h4>{{ .section.right.title }}</h4>
+                {{ partial "markdownify-block" .section.right.text }}
+                {{ if .section.right.link }}
+                    <ul class="actions special">
+                        <li><a href="{{ relref .page .section.right.link | relURL }}" class="button">Learn More</a></li>
+                    </ul>
+                {{ end }}
+            </article>
+        </section>
+    </div>
+</section>

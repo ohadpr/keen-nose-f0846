@@ -1,0 +1,46 @@
+---
+label: Contact Section
+hide_body: true
+is_partial: true
+display_field: title
+fields:
+  - type: text
+    name: title
+    label: Section Title
+    default: Amet lorem
+    config:
+      required: true
+  - type: textarea
+    name: text
+    label: Section Text
+    description: The text displayed below the section title
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: text
+    name: section_id
+    label: Section ID
+    default: four
+    config:
+      required: true
+  - type: select
+    name: background_style
+    label: Background Style
+    description: The background style of the section
+    config:
+      required: true
+      source:
+        type: custom
+      options:
+        - style1
+        - style2
+        - style3
+        - style4
+        - style5
+  - type: text
+    name: component
+    hidden: true
+    default: contact.html
+    config:
+      required: true

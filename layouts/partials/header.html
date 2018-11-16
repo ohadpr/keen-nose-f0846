@@ -1,0 +1,7 @@
+<!-- Header -->
+<header id="header">
+    <a href="#menu">Menu</a>
+    {{ range $action := .Site.Params.header.buttons }}
+        <a href="{{ if strings.HasPrefix $action.url "#" }}{{ $action.url }}{{ else }}{{ relref $ $action.url | relURL }}{{ end }}"{{ if $action.is_button }} class="button{{ if $action.is_primary }} primary{{ end }}"{{ end }}>{{ $action.label }}</a>
+    {{ end }}
+</header>
