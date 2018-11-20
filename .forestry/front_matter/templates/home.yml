@@ -3,57 +3,57 @@ label: Home
 hide_body: true
 is_partial: false
 fields:
+- type: text
+  name: title
+  label: Title
+- type: field_group
+  name: banner
+  label: The home page banner
+  fields:
   - type: text
     name: title
-    label: Title
-  - type: field_group
-    name: banner
-    label: The home page banner
-    fields:
-      - type: text
-        name: title
-        label: Banner Title
-        description: The title displayed in the home page banner
-        config:
-          required: true
-      - type: textarea
-        name: subtitle
-        label: Banner Subtitle
-        description: The text displayed below the banner title
-        config:
-          wysiwyg: true
-          schema:
-            format: markdown
-      - type: text
-        name: icon
-        label: Banner Icon
-        description: The icon displayed above the banner title (Font Awesome icon)
-      - type: field_group_list
-        name: actions
-        label: Banner Action Buttons
-        config:
-          labelField: label
-        fields:
-          - type: include
-            name: include_action
-            label: Action
-            template: action
-  - type: blocks
-    name: sections
-    label: Sections
-    description: Home Sections
-    template_types:
-      - split
-      - spotlights
-      - features
-      - contact
-      - generic_section
-  - type: text
-    name: layout
-    label: Layout
-    hidden: true
-    default: home
+    label: Banner Title
+    description: The title displayed in the home page banner
     config:
       required: true
+  - type: textarea
+    name: subtitle
+    label: Banner Subtitle
+    description: The text displayed below the banner title
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: text
+    name: icon
+    label: Banner Icon
+    description: The icon displayed above the banner title (Font Awesome icon)
+  - type: field_group_list
+    name: actions
+    label: Banner Action Buttons
+    config:
+      labelField: label
+    fields:
+    - type: include
+      name: include_action
+      label: Action
+      template: action
+- type: blocks
+  name: sections
+  label: Sections
+  description: Home Sections
+  template_types:
+  - split
+  - spotlights
+  - features
+  - contact
+  - generic_section
+- type: text
+  name: layout
+  label: Layout
+  hidden: true
+  default: home
+  config:
+    required: true
 pages:
-  - _index.md
+- content/_index.md

@@ -4,86 +4,86 @@ hide_body: true
 is_partial: true
 display_field: title
 fields:
+- type: text
+  name: title
+  label: Section Title
+  default: Tempus feugiat
+  config:
+    required: true
+- type: textarea
+  name: subtitle
+  label: Section Subtitle
+  config:
+    wysiwyg: true
+    schema:
+      format: markdown
+- type: text
+  name: section_id
+  label: Section ID
+  default: three
+  config:
+    required: true
+- type: select
+  name: background_style
+  label: Background Style
+  description: The background style of the section
+  config:
+    required: true
+    source:
+      type: custom
+    options:
+    - style1
+    - style2
+    - style3
+    - style4
+    - style5
+- type: field_group_list
+  name: features_list
+  label: Features
+  description: A list of features
+  config:
+    labelField: title
+  fields:
   - type: text
     name: title
-    label: Section Title
-    default: Tempus feugiat
-    config:
-      required: true
+    label: Feature Title
   - type: textarea
-    name: subtitle
-    label: Section Subtitle
+    name: text
+    label: Feature Text
     config:
       wysiwyg: true
       schema:
         format: markdown
   - type: text
-    name: section_id
-    label: Section ID
-    default: three
-    config:
-      required: true
+    name: icon
+    label: Feature Icon
+    description: Font Awesome icon
   - type: select
-    name: background_style
-    label: Background Style
-    description: The background style of the section
+    name: icon_style
+    label: Icon Style
+    description: Controls the color of the icon
     config:
-      required: true
       source:
         type: custom
       options:
-        - style1
-        - style2
-        - style3
-        - style4
-        - style5
-  - type: field_group_list
-    name: features_list
-    label: Features
-    description: A list of features
-    config:
-      labelField: title
-    fields:
-      - type: text
-        name: title
-        label: Feature Title
-      - type: textarea
-        name: text
-        label: Feature Text
-        config:
-          wysiwyg: true
-          schema:
-            format: markdown
-      - type: text
-        name: icon
-        label: Feature Icon
-        description: Font Awesome icon
-      - type: select
-        name: icon_style
-        label: Icon Style
-        description: Controls the color of the icon
-        config:
-          source:
-            type: custom
-          options:
-            - style1
-            - style2
-            - style3
-            - style4
-            - style5
-  - type: field_group_list
-    name: actions
-    label: Action Buttons
-    config:
-      labelField: label
-    fields:
-      - type: include
-        name: include_action
-        label: Action
-        template: action
-  - type: text
-    name: component
-    hidden: true
-    default: features.html
-    config:
-      required: true
+      - style1
+      - style2
+      - style3
+      - style4
+      - style5
+- type: field_group_list
+  name: actions
+  label: Action Buttons
+  config:
+    labelField: label
+  fields:
+  - type: include
+    name: include_action
+    label: Action
+    template: action
+- type: text
+  name: component
+  hidden: true
+  default: features.html
+  config:
+    required: true

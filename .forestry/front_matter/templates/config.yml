@@ -3,127 +3,127 @@ label: Config
 hide_body: true
 is_partial: false
 fields:
-  - type: text
-    name: title
-    label: Title
-    description: Site title
+- type: text
+  name: title
+  label: Title
+  description: Site title
+  config:
+    required: true
+- type: field_group
+  name: params
+  label: Params
+  description: Site parameters
+  fields:
+  - type: field_group
+    name: header
+    label: Header Configuration
+    description: Configuration for the page header
+    fields:
+    - type: field_group_list
+      name: buttons
+      label: Headr Buttons
+      config:
+        labelField: label
+      fields:
+      - type: text
+        name: label
+        label: Button Label
+        description: The text displayed in the button
+      - type: text
+        name: url
+        label: Button URL
+      - type: boolean
+        name: is_button
+        label: Button Border
+        description: Gives the button a border
+        default: false
+      - type: boolean
+        name: is_primary
+        label: Is Primary
+        description: Gives the button a primary color scheme
+        default: false
+  - type: field_group
+    name: menu
+    label: Menu Configuration
+    description: Configuration for the page menu
+    fields:
+    - type: field_group_list
+      name: actions
+      label: Menu Action Buttons
+      description: The action buttons displayed at the bottom of the menu options
+      config:
+        labelField: label
+      fields:
+      - type: include
+        name: include_action
+        label: Action
+        template: action
+  - type: select
+    name: palette
+    label: Page Color Palette
+    description: The color palette used for the page
     config:
       required: true
+      source:
+        type: custom
+      options:
+      - blue
+      - purple
   - type: field_group
-    name: params
-    label: Params
-    description: Site parameters
+    name: footer
+    label: Footer Configuration
+    description: The configuration for the page footer
     fields:
+    - type: field_group_list
+      name: social_icons
+      label: Social Media Icons
+      description: The social media icons displayed at the bottom of the page
+      config:
+        labelField: title
+      fields:
+      - type: text
+        name: title
+        label: Icon Title
+      - type: text
+        name: icon
+        label: Icon
+        description: Font Awesome icon
+      - type: text
+        name: url
+        label: Icon URL
+    - type: text
+      name: copyright
+      label: Footer Copyright
+      description: The text displayed in the footer copyright section
+  - type: field_group
+    name: palettes
+    hidden: true
+    fields:
+    - type: field_group
+      name: blue
+      fields:
       - type: field_group
-        name: header
-        label: Header Configuration
-        description: Configuration for the page header
+        name: sass
         fields:
-          - type: field_group_list
-            name: buttons
-            label: Headr Buttons
-            config:
-              labelField: label
-            fields:
-              - type: text
-                name: label
-                label: Button Label
-                description: The text displayed in the button
-              - type: text
-                name: url
-                label: Button URL
-              - type: boolean
-                name: is_button
-                label: Button Border
-                description: Gives the button a border
-                default: false
-              - type: boolean
-                name: is_primary
-                label: Is Primary
-                description: Gives the button a primary color scheme
-                default: false
+        - type: text
+          name: accent2
+        - type: text
+          name: accent3_bg
+        - type: text
+          name: accent3_fg_light
+        - type: text
+          name: accent4
+    - type: field_group
+      name: purple
+      fields:
       - type: field_group
-        name: menu
-        label: Menu Configuration
-        description: Configuration for the page menu
+        name: sass
         fields:
-          - type: field_group_list
-            name: actions
-            label: Menu Action Buttons
-            description: The action buttons displayed at the bottom of the menu options
-            config:
-              labelField: label
-            fields:
-              - type: include
-                name: include_action
-                label: Action
-                template: action
-      - type: select
-        name: palette
-        label: Page Color Palette
-        description: The color palette used for the page
-        config:
-          required: true
-          source:
-            type: custom
-          options:
-            - blue
-            - purple
-      - type: field_group
-        name: footer
-        label: Footer Configuration
-        description: The configuration for the page footer
-        fields:
-          - type: field_group_list
-            name: social_icons
-            label: Social Media Icons
-            description: The social media icons displayed at the bottom of the page
-            config:
-              labelField: title
-            fields:
-              - type: text
-                name: title
-                label: Icon Title
-              - type: text
-                name: icon
-                label: Icon
-                description: Font Awesome icon
-              - type: text
-                name: url
-                label: Icon URL
-          - type: text
-            name: copyright
-            label: Footer Copyright
-            description: The text displayed in the footer copyright section
-      - type: field_group
-        name: palettes
-        hidden: true
-        fields:
-          - type: field_group
-            name: blue
-            fields:
-              - type: field_group
-                name: sass
-                fields:
-                  - type: text
-                    name: accent2
-                  - type: text
-                    name: accent3_bg
-                  - type: text
-                    name: accent3_fg_light
-                  - type: text
-                    name: accent4
-          - type: field_group
-            name: purple
-            fields:
-              - type: field_group
-                name: sass
-                fields:
-                  - type: text
-                    name: accent2
-                  - type: text
-                    name: accent3_bg
-                  - type: text
-                    name: accent3_fg_light
-                  - type: text
-                    name: accent4
+        - type: text
+          name: accent2
+        - type: text
+          name: accent3_bg
+        - type: text
+          name: accent3_fg_light
+        - type: text
+          name: accent4

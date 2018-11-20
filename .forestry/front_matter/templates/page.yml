@@ -1,71 +1,72 @@
 ---
 label: Page
+hide_body: false
 is_partial: false
 fields:
-  - type: text
-    name: title
-    label: Page Title
-    config:
-      required: true
+- type: text
+  name: title
+  label: Page Title
+  config:
+    required: true
+- type: textarea
+  name: subtitle
+  label: Page Subtitle
+  description: The text displayed below the page title
+  config:
+    wysiwyg: true
+    schema:
+      format: markdown
+- type: file
+  name: content_img_path
+  label: Content Image
+  description: The image displayed in the page content
+- type: select
+  name: background_style
+  label: Background Style
+  description: The background style of the page
+  config:
+    required: true
+    source:
+      type: custom
+    options:
+    - style1
+    - style2
+    - style3
+    - style4
+    - style5
+- type: field_group
+  name: home_spotlights
+  label: Home Spotlights
+  description: Used for pages displayed in the home spotlights section
+  fields:
+  - type: boolean
+    name: enabled
+    label: Enabled
+    description: Enables page home spotlights section
+    default: false
+  - type: number
+    name: weight
+    label: Spotlight Index
+    description: Controls the index of the spotlight in the home spotlights section
   - type: textarea
-    name: subtitle
-    label: Page Subtitle
-    description: The text displayed below the page title
+    name: excerpt
+    label: Excerpt
+    description: The Excerpt displayed in the home spotlight
     config:
       wysiwyg: true
       schema:
         format: markdown
-  - type: file
-    name: content_img_path
-    label: Content Image
-    description: The image displayed in the page content
-  - type: select
-    name: background_style
-    label: Background Style
-    description: The background style of the page
-    config:
-      required: true
-      source:
-        type: custom
-      options:
-        - style1
-        - style2
-        - style3
-        - style4
-        - style5
-  - type: field_group
-    name: home_spotlights
-    label: Home Spotlights
-    description: Used for pages displayed in the home spotlights section
-    fields:
-      - type: boolean
-        name: enabled
-        label: Enabled
-        description: Enables page home spotlights section
-        default: false
-      - type: number
-        name: weight
-        label: Spotlight Index
-        description: Controls the index of the spotlight in the home spotlights section
-      - type: textarea
-        name: excerpt
-        label: Excerpt
-        description: The Excerpt displayed in the home spotlight
-        config:
-          wysiwyg: true
-          schema:
-            format: markdown
-  - type: text
-    name: layout
-    label: Layout
-    hidden: true
-    default: page
-    config:
-      required: true
+- type: text
+  name: layout
+  label: Layout
+  hidden: true
+  default: page
+  config:
+    required: true
 pages:
-  - contact_us.md
-  - etiam.md
-  - generic.md
-  - lacus.md
-  - privacy.md
-  - terms.md
+- content/terms.md
+- content/privacy.md
+- content/lacus.md
+- content/generic.md
+- content/etiam.md
+- content/contact_us.md

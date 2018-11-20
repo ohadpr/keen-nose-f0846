@@ -4,18 +4,18 @@ hide_body: true
 is_partial: true
 display_field: title
 fields:
-  - type: text
-    name: title
-    label: Section Title
-    config:
-      required: true
-  - type: text
-    name: section_id
-    label: Section ID
-    config:
-      required: true
-  - type: text
-    name: component
-    hidden: true
-    config:
-      required: true
+- type: text
+  name: title
+  label: Section Title
+  config:
+    required: true
+- type: text
+  name: section_id
+  label: Section ID
+  config:
+    required: true
+- type: text
+  name: component
+  hidden: true
+  config:
+    required: true
